@@ -1,9 +1,6 @@
 package hr.rokym.ecommerce.config;
 
-import hr.rokym.ecommerce.entity.Country;
-import hr.rokym.ecommerce.entity.Product;
-import hr.rokym.ecommerce.entity.ProductCategory;
-import hr.rokym.ecommerce.entity.State;
+import hr.rokym.ecommerce.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +38,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
         disableHttpMethods(Country.class, config, theUnsupportedActions);
         disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         exposeIds(config);
 
